@@ -25,6 +25,7 @@ export type Text = {
   href: string | null
 }
 export type Block = {
+  id: string
   type: string
 } & { [blockType: string]: BlockType }
 export type BlockType = {
@@ -34,7 +35,7 @@ export type BlockType = {
 }
 
 export type BlockParser = {
-  [blockType: string]: (value: BlockType) => string
+  [blockType: string]: (value: BlockType, childrenMd?: string) => string
 }
 
 export type TextParser = {

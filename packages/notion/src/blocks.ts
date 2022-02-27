@@ -1,8 +1,10 @@
+import { getBlocks } from '.'
 import { Block, BlockParser, BlockType, TextParser } from './types'
 
-const tag = (t: string, content?: string | null, attributes?: string) => {
+const tag = (t: string, content: string | null, attributes?: string) => {
   return `<${t} ${attributes || ''}>${content || ''}</${t}>`
 }
+const isExternalLink = (href: string | null) => /https?:\/\//.test(href || '')
 
 const textParser: TextParser = {
   text: (v) => {
@@ -30,13 +32,25 @@ const textParser: TextParser = {
     }
 
     if (text.link) {
-      res = `<a href="${text.link.url}">${res}</a>`
+      res = tag(
+        'a',
+        res,
+        `href="${text.link.url}" target="${
+          isExternalLink(text.link.url) ? '_blank' : '_self'
+        }"`,
+      )
     }
 
     return `<span class="${color !== 'default' ? color : ''}">${res}</span>`
   },
   mention: (v) => {
-    return tag('a', v.href, `href="${v.href}"`)
+    return tag(
+      'a',
+      v.href,
+      `href="${v.href}"  target="${
+        isExternalLink(v.href) ? '_blank' : '_self'
+      }"`,
+    )
   },
 }
 
@@ -48,8 +62,14 @@ const blockParser: BlockParser = {
   heading_1: (value) => `# ${parseText(value)}`,
   heading_2: (value) => `## ${parseText(value)}`,
   heading_3: (value) => `### ${parseText(value)}`,
-  bulleted_list_item: (value) => {
-    return `- ${parseText(value)}`
+  bulleted_list_item: (value, childrenMd = '') => {
+    const children = childrenMd
+      .split('- ')
+      .filter(Boolean)
+      .map((html) => `  - ${html}\n`)
+      .join('')
+    return `- ${parseText(value)}
+${children}`
   },
   numbered_list_item: (value) => {
     return `- ${parseText(value)}`
@@ -80,14 +100,21 @@ const parseText = ({ text }: BlockType): string => {
     .join('')
 }
 
-export function blocksToMarkdown(blocks: Block[]) {
-  const mds = blocks.map((block) => {
-    const value = block[block.type]
-    const parseFn =
-      blockParser[block.type as string] || (() => `Unsupported block`)
-    const parsed = parseFn(value)
-    return parsed
-  })
+export async function parseBlocksToMarkdown(blocks: Block[]) {
+  const mds = await Promise.all(
+    blocks.map(async (block) => {
+      const value = block[block.type]
+      let childrenMd: string | undefined
+      if (block.has_children) {
+        const childrenBlocks = await getBlocks(block.id)
+        childrenMd = await parseBlocksToMarkdown(childrenBlocks)
+      }
+      const parseFn =
+        blockParser[block.type as string] || (() => `Unsupported block`)
+      const parsed = parseFn(value, childrenMd)
+      return parsed
+    }),
+  )
 
   return mds.join('\n\n')
 }

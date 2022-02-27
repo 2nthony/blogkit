@@ -1,6 +1,6 @@
 import { Request } from 'blogkit'
 import { Client } from '@notionhq/client'
-import { blocksToMarkdown } from './blocks'
+import { parseBlocksToMarkdown } from './blocks'
 import { retriever } from './retriever'
 import { Block } from './types'
 
@@ -47,7 +47,7 @@ async function getDatabase() {
   return response.results
 }
 
-async function getBlocks(blockId: string): Promise<Block[]> {
+export async function getBlocks(blockId: string): Promise<Block[]> {
   const response = await notion.blocks.children.list({
     block_id: blockId,
   })
@@ -86,7 +86,7 @@ export const request: Request = {
     const id = post!.id
 
     const blocks = await getBlocks(id)
-    const markdown = blocksToMarkdown(blocks)
+    const markdown = await parseBlocksToMarkdown(blocks)
 
     return {
       id,
