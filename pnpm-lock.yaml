@@ -18,7 +18,6 @@ importers:
       postcss: ^8.4.7
       react: ^17.0.2
       react-dom: ^17.0.2
-      saika: ^2.13.10
       tailwindcss: ^3.0.23
       typescript: ^4.5.5
     devDependencies:
@@ -30,7 +29,6 @@ importers:
       postcss: 8.4.7
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      saika: 2.13.10
       tailwindcss: 3.0.23_autoprefixer@10.4.2
       typescript: 4.5.5
 
@@ -676,10 +674,6 @@ packages:
     resolution: {integrity: sha512-xyFwyhro/JEof6Ghe2iz2NcXoj2sloNsWr/XsERDK/oiPCfaNhl5ONfp+jQdAZRQQ0IJWNzH9zIZF7li91kh2w==}
     dev: true
 
-  /jump.js/1.0.2:
-    resolution: {integrity: sha1-4GQbR/QKOPITnCX9oFAL8o5DAVo=}
-    dev: true
-
   /lilconfig/2.0.4:
     resolution: {integrity: sha512-bfTIN7lEsiooCocSISTWXkiWJkRqtL9wYtYy+8EK3Y41qh3mpwPU0ycTOgjdY9ErwXCc8QyrQp82bdL0Xkm9yA==}
     engines: {node: '>=10'}
@@ -687,10 +681,6 @@ packages:
 
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
-    dev: true
-
-  /loadjs/3.6.1:
-    resolution: {integrity: sha512-AZEBw2GWdJk2IzBgQ+Wohoao5j+t0rajqK8dJu8jQqgYxDTxhmCt0ayMo/vCa0ZAMvZxnJcam6uLICfnVd8KAw==}
     dev: true
 
   /lodash.get/4.4.2:
@@ -712,10 +702,6 @@ packages:
     engines: {node: '>= 12'}
     hasBin: true
     dev: false
-
-  /medium-zoom/1.0.6:
-    resolution: {integrity: sha512-UdiUWfvz9fZMg1pzf4dcuqA0W079o0mpqbTnOz5ip4VGYX96QjmbM+OgOU/0uOzAytxC0Ny4z+VcYQnhdifimg==}
-    dev: true
 
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
@@ -931,6 +917,7 @@ packages:
   /prismjs/1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
     engines: {node: '>=6'}
+    dev: false
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -1002,18 +989,6 @@ packages:
     engines: {npm: '>=2.0.0'}
     dependencies:
       tslib: 1.14.1
-    dev: true
-
-  /saika/2.13.10:
-    resolution: {integrity: sha512-Y/fDt00agaxiEu2LkFgBaUPcohMokuYnd9GVseokhOVU8VVfoj8B5hC/fOIcWKFVitGxyBF0uF8sc1QYtVwKtg==}
-    dependencies:
-      jump.js: 1.0.2
-      loadjs: 3.6.1
-      medium-zoom: 1.0.6
-      prismjs: 1.27.0
-      vue: 2.6.14
-      vue-router: 3.5.3
-      vuex: 3.6.2_vue@2.6.14
     dev: true
 
   /scheduler/0.20.2:
@@ -1160,22 +1135,6 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
-    dev: true
-
-  /vue-router/3.5.3:
-    resolution: {integrity: sha512-FUlILrW3DGitS2h+Xaw8aRNvGTwtuaxrRkNSHWTizOfLUie7wuYwezeZ50iflRn8YPV5kxmU2LQuu3nM/b3Zsg==}
-    dev: true
-
-  /vue/2.6.14:
-    resolution: {integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==}
-    dev: true
-
-  /vuex/3.6.2_vue@2.6.14:
-    resolution: {integrity: sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==}
-    peerDependencies:
-      vue: ^2.0.0
-    dependencies:
-      vue: 2.6.14
     dev: true
 
   /webidl-conversions/3.0.1:
