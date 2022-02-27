@@ -18,7 +18,9 @@ export function Post({ post, siteConfig }: PostPageProps) {
       </Head>
 
       <div className="text-lg my-8 font-semibold">
-        <Link href="/">{siteConfig.title}</Link>
+        <Link href="/">
+          <a className="no-underline">{siteConfig.title}</a>
+        </Link>
       </div>
 
       <h1 className="text-4xl font-extrabold mb-4">{post.attributes.title}</h1>

@@ -14,7 +14,7 @@ export function Home({ posts, siteConfig }: HomePageProps) {
       <h1 className="text-4xl font-extrabold">{siteConfig.title}</h1>
 
       <div className="mt-16 mb-12">
-        <ul>
+        <ul className="pl-0">
           {posts.map((post) => {
             return <PostItem key={post.attributes.slug} post={post} />
           })}
@@ -30,10 +30,10 @@ export function Home({ posts, siteConfig }: HomePageProps) {
 
 function PostItem({ post }: { post: Post }) {
   return (
-    <li className="post-item my-6">
+    <li className="post-item my-6 list-none pl-0">
       <h3 className="text-2xl font-bold mb-2">
         <Link href={'/' + post.attributes.slug}>
-          <a className="hover:underline cursor-pointer">
+          <a className="hover:underline no-underline cursor-pointer">
             {post.attributes.title}
           </a>
         </Link>
