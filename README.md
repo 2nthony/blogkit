@@ -1,4 +1,4 @@
-# empty-starter
+# Blogkit
 
 ## License
 
