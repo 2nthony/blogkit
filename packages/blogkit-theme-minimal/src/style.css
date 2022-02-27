@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+  @apply mt-12 mb-6 font-medium;
+}
+.post-body h1 + *,
+.post-body h2 + *,
+.post-body h3 + *,
+.post-body h4 + *,
+.post-body h5 + *,
+.post-body h6 + * {
+  @apply mt-0;
+}
+.post-body h1 {
+  @apply text-4xl;
+}
+.post-body h2 {
+  @apply text-3xl;
+}
+.post-body h3 {
+  @apply text-2xl;
+}
+.post-body h4 {
+  @apply text-xl;
+}
+
+.post-body p {
+  @apply mb-4 leading-relaxed;
+}
+
+.post-body a {
+  @apply underline;
+}
+
+.post-body code {
+  @apply text-sm;
+}
+.post-body pre {
+  @apply mb-4 p-4 bg-slate-100 rounded;
+}
+.post-body :not(pre) code {
+  @apply bg-slate-100 text-red-400 py-1 px-2 rounded;
+}
+
+.post-body img {
+  @apply inline-block my-8 max-w-full;
+}
+
+/* prism begin */
+/**
+ * GHColors theme by Avi Aryan (http://aviaryan.in)
+ * Inspired by Github syntax coloring
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999988;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string {
+  color: #028265;
+}
+
+.token.attr-value,
+.token.punctuation,
+.token.operator {
+  color: #000;
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.regex,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.property {
+  color: #000;
+  font-weight: bolder;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name,
+.language-autohotkey .token.selector {
+  color: #ff0078;
+  font-weight: bolder;
+}
+
+.token.deleted,
+.language-autohotkey .token.tag {
+  color: #0076ff;
+}
+
+.token.tag,
+.token.selector,
+.language-autohotkey .token.keyword {
+  color: #0076ff;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.function,
+.token.tag,
+.token.class-name,
+.token.number,
+.token.boolean {
+  color: #0076ff;
+} /* prism end */
+
+/* colors begin */
+.post-body .gray {
+  @apply text-slate-500;
+}
+.post-body .brown {
+  @apply text-yellow-800;
+}
+.post-body .orange {
+  @apply text-orange-500;
+}
+.post-body .yellow {
+  @apply text-yellow-500;
+}
+.post-body .green {
+  @apply text-green-700;
+}
+.post-body .blue {
+  @apply text-sky-500;
+}
+.post-body .purple {
+  @apply text-violet-600;
+}
+.post-body .pink {
+  @apply text-pink-600;
+}
+.post-body .red {
+  @apply text-rose-600;
+}
+/* colors end */
