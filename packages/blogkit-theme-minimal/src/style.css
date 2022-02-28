@@ -43,10 +43,10 @@
   @apply text-sm;
 }
 .post-body pre {
-  @apply mb-4 p-4 bg-slate-100 rounded;
+  @apply mb-4 p-4 rounded;
 }
 .post-body :not(pre) code {
-  @apply bg-slate-100 text-red-400 py-1 px-2 rounded;
+  @apply bg-slate-100 text-rose-500 py-1 px-2 rounded;
 }
 
 .post-body img {
