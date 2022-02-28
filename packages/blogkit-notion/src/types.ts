@@ -94,6 +94,9 @@ export type TodoObject = {
   text: RichTextObject[]
   checked: boolean
 }
+export type QuoteObject = {
+  text: RichTextObject[]
+}
 
 // Blocks
 export type ParagraphBlock = BlockObject & {
@@ -126,6 +129,10 @@ export type TodoBlock = BlockObject & {
   type: 'to_do'
   to_do: TodoObject
 }
+export type QuoteBlock = BlockObject & {
+  type: 'quote'
+  quote: QuoteObject
+}
 
 export type Block =
   | ParagraphBlock
@@ -135,6 +142,7 @@ export type Block =
   | NumberedListItemBlock
   | CodeBlock
   | TodoBlock
+  | QuoteBlock
   | { [type: string]: string | any }
 
 export type BlockParser = {

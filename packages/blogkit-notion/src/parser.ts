@@ -5,6 +5,7 @@ import {
   ImageBlock,
   NumberedListItemBlock,
   ParagraphBlock,
+  QuoteBlock,
   RichTextObject,
   TodoBlock,
 } from './types'
@@ -83,5 +84,13 @@ export function parseImageBlock(imageBlock: ImageBlock) {
 
   return {
     src,
+  }
+}
+
+export function parseQuoteBlock(quoteBlock: QuoteBlock) {
+  const { text } = quoteBlock.quote
+
+  return {
+    text,
   }
 }
