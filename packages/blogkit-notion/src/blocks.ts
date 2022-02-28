@@ -160,7 +160,10 @@ export async function parseBlocksToMarkdown(blocks: Block[]) {
         const childrenBlocks = await getBlocks(block.id)
         childrenMd = await parseBlocksToMarkdown(childrenBlocks)
       }
-      const parser = blockParser[block.type]
+      const parser =
+        blockParser[block.type] ??
+        // TODO: add more parser to remove this
+        (() => `<p class="red">Unsupported block</p>`)
       const parsed = parser(block, childrenMd)
       return parsed
     }),
