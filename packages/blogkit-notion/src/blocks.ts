@@ -6,6 +6,7 @@ import {
   parseImageBlock,
   parseNumberedListItemBlock,
   parseParagraphBlock,
+  parseQuoteBlock,
   parseRichTextObject,
   parseTodoBlock,
 } from './parser'
@@ -18,6 +19,7 @@ import {
   ImageBlock,
   NumberedListItemBlock,
   ParagraphBlock,
+  QuoteBlock,
   RichTextObject,
   RichTextParser,
   TodoBlock,
@@ -142,6 +144,11 @@ ${code}
   image: (block) => {
     const { src } = parseImageBlock(block as ImageBlock)
     return `![](${src})`
+  },
+  quote: (block) => {
+    const { text } = parseQuoteBlock(block as QuoteBlock)
+
+    return `> ${parseText(text)}`
   },
 }
 
