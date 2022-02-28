@@ -1,17 +1,39 @@
 import { getBlocks } from '.'
-import { Block, BlockParser, BlockType, TextParser } from './types'
+import {
+  parseBulletedListItemBlock,
+  parseCodeBlock,
+  parseHeadingBlock,
+  parseImageBlock,
+  parseNumberedListItemBlock,
+  parseParagraphBlock,
+  parseRichTextObject,
+  parseTodoBlock,
+} from './parser'
+import {
+  Block,
+  BlockParser,
+  BulletedListItemBlock,
+  CodeBlock,
+  HeadingBlock,
+  ImageBlock,
+  NumberedListItemBlock,
+  ParagraphBlock,
+  RichTextObject,
+  RichTextParser,
+  TodoBlock,
+} from './types'
 
 const tag = (t: string, content: string | null, attributes?: string) => {
   return `<${t} ${attributes || ''}>${content || ''}</${t}>`
 }
 const isExternalLink = (href: string | null) => /https?:\/\//.test(href || '')
 
-const textParser: TextParser = {
-  text: (v) => {
+const richTextParser: RichTextParser = {
+  text: (block) => {
     const {
       text,
       annotations: { bold, italic, strikethrough, underline, code, color },
-    } = v
+    } = parseRichTextObject(block as RichTextObject)
 
     let res = text.content
 
@@ -43,75 +65,99 @@ const textParser: TextParser = {
 
     return `<span class="${color !== 'default' ? color : ''}">${res}</span>`
   },
-  mention: (v) => {
+  mention: (block) => {
+    const { href } = parseRichTextObject(block as RichTextObject)
+
     return tag(
       'a',
-      v.href,
-      `href="${v.href}"  target="${
-        isExternalLink(v.href) ? '_blank' : '_self'
-      }"`,
+      href,
+      `href="${href}"  target="${isExternalLink(href) ? '_blank' : '_self'}"`,
     )
   },
 }
 
-const blockParser: BlockParser = {
-  paragraph: (value) => {
-    const content = parseText(value)
-    return `<p>${content}</p>`
-  },
-  heading_1: (value) => `# ${parseText(value)}`,
-  heading_2: (value) => `## ${parseText(value)}`,
-  heading_3: (value) => `### ${parseText(value)}`,
-  bulleted_list_item: (value, childrenMd = '') => {
-    const children = childrenMd
-      .split('- ')
-      .filter(Boolean)
-      .map((html) => `  - ${html}\n`)
-      .join('')
-    return `- ${parseText(value)}
-${children}`
-  },
-  numbered_list_item: (value) => {
-    return `- ${parseText(value)}`
-  },
-  to_do: (value) => {
-    return `- [${value.checked ? 'x' : ' '}] ${parseText(value)}`
-  },
-  code: (value) => {
-    return `\`\`\`${value.language}
-${value.text[0].text.content}
-\`\`\``
-  },
-  // Unsupported
-  synced_block: () => ``,
-  table_of_contents: () => ``,
-}
-
-const parseText = ({ text }: BlockType): string => {
+const parseText = (text: RichTextObject[] | undefined): string => {
   if (!text) {
     return ''
   }
 
   return text
     .map((v) => {
-      const parserFn = textParser[v.type]
+      const parserFn = richTextParser[v.type]
       return parserFn(v)
     })
     .join('')
 }
 
+const blockParser: BlockParser = {
+  paragraph: (block) => {
+    const { text } = parseParagraphBlock(block as ParagraphBlock)
+    const content = parseText(text)
+
+    return `<p>${content}</p>`
+  },
+  heading_1: (block) => {
+    const { text } = parseHeadingBlock(block as HeadingBlock)
+
+    return `# ${parseText(text)}`
+  },
+  heading_2: (block) => {
+    const { text } = parseHeadingBlock(block as HeadingBlock)
+
+    return `## ${parseText(text)}`
+  },
+  heading_3: (block) => {
+    const { text } = parseHeadingBlock(block as HeadingBlock)
+
+    return `### ${parseText(text)}`
+  },
+  bulleted_list_item: (block, childrenMd = '') => {
+    const { text } = parseBulletedListItemBlock(block as BulletedListItemBlock)
+    const children = childrenMd
+      .split('- ')
+      .filter(Boolean)
+      .map((html) => `  - ${html}\n`)
+      .join('')
+
+    return `- ${parseText(text)}
+${children}`
+  },
+  numbered_list_item: (block) => {
+    const { text } = parseNumberedListItemBlock(block as NumberedListItemBlock)
+
+    return `- ${parseText(text)}`
+  },
+  to_do: (block) => {
+    const { checked, text } = parseTodoBlock(block as TodoBlock)
+
+    return `- [${checked ? 'x' : ' '}] ${parseText(text)}`
+  },
+  code: (block) => {
+    const { code, language } = parseCodeBlock(block as CodeBlock)
+
+    return `\`\`\`${language}
+${code}
+\`\`\``
+  },
+  image: (block) => {
+    const { src } = parseImageBlock(block as ImageBlock)
+    return `![](${src})`
+  },
+  // Unsupported
+  synced_block: () => ``,
+  table_of_contents: () => ``,
+}
+
 export async function parseBlocksToMarkdown(blocks: Block[]) {
   const mds = await Promise.all(
     blocks.map(async (block) => {
-      const value = block[block.type]
       let childrenMd: string | undefined
       if (block.has_children) {
         const childrenBlocks = await getBlocks(block.id)
         childrenMd = await parseBlocksToMarkdown(childrenBlocks)
       }
-      const parseFn =
-        blockParser[block.type as string] || (() => `Unsupported block`)
-      const parsed = parseFn(value, childrenMd)
+      const parser = blockParser[block.type]
+      const parsed = parser(block, childrenMd)
       return parsed
     }),
   )
