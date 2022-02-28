@@ -143,9 +143,6 @@ ${code}
     const { src } = parseImageBlock(block as ImageBlock)
     return `![](${src})`
   },
-  // Unsupported
-  synced_block: () => ``,
-  table_of_contents: () => ``,
 }
 
 export async function parseBlocksToMarkdown(blocks: Block[]) {
