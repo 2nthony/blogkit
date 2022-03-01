@@ -13,12 +13,12 @@ importers:
       '@notionhq/client': ^1.0.0
       '@types/lodash': ^4.14.179
       lodash: ^4.17.21
-      lodash.get: ^4.4.2
+      notion-to-md: ^2.3.1
       typescript: ^4.5.5
     dependencies:
       '@notionhq/client': 1.0.0
       lodash: 4.17.21
-      lodash.get: 4.4.2
+      notion-to-md: 2.3.1
     devDependencies:
       '@types/lodash': 4.14.179
       typescript: 4.5.5
@@ -62,21 +62,6 @@ importers:
     devDependencies:
       '@types/marked': 4.0.2
       '@types/prismjs': 1.26.0
-      typescript: 4.5.5
-
-  packages/notion:
-    specifiers:
-      '@notionhq/client': ^1.0.0
-      '@types/lodash': ^4.14.179
-      lodash: ^4.17.21
-      lodash.get: ^4.4.2
-      typescript: ^4.5.5
-    dependencies:
-      '@notionhq/client': 1.0.0
-      lodash: 4.17.21
-      lodash.get: 4.4.2
-    devDependencies:
-      '@types/lodash': 4.14.179
       typescript: 4.5.5
 
 packages:
@@ -715,10 +700,6 @@ packages:
     resolution: {integrity: sha1-wCUTUV4wna3dTCTGDP3c9ZdtkRU=}
     dev: true
 
-  /lodash.get/4.4.2:
-    resolution: {integrity: sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=}
-    dev: false
-
   /lodash.isplainobject/4.0.6:
     resolution: {integrity: sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=}
     dev: true
@@ -845,6 +826,11 @@ packages:
     resolution: {integrity: sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /notion-to-md/2.3.1:
+    resolution: {integrity: sha512-IH6Oe/u/gexEL5/XKvcWQHWyRWljtPi7+lki3CGx7OqzK2R5FsxxNORCofME03C9UyV++Y3Kj/yBh98WlyTwfg==}
+    engines: {node: '>=12'}
+    dev: false
 
   /object-assign/4.1.1:
     resolution: {integrity: sha1-IQmtx5ZYh8/AXLvUQsrIv7s2CGM=}
