@@ -1,7 +1,6 @@
 # Blogkit (beta)
 
-[![](https://badgen.net/npm/v/blogkit?label=)](https://npmjs.com/package/blogkit)
-[![](https://badgen.net/npm/license/blogkit?label=)](./LICENSE)
+[![](https://badgen.net/npm/v/blogkit?label=&color=cyan)](https://npmjs.com/package/blogkit)
 
 Blogkit is an unified blog engine inspired by [Sairin](https://github.com/djyde/sairin).
 
