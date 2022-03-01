@@ -5,6 +5,8 @@
 
 Blogkit is an unified blog engine inspired by [Sairin](https://github.com/djyde/sairin).
 
+![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/aZpKgJmeSC4X.png)
+
 ## Get started with starter templates
 
 | Template                                                                    | One-Click Deploy                                                                                                                                                                                |
