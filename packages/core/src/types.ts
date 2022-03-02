@@ -1,4 +1,4 @@
-type TODO = any
+import { NextPageContext } from 'next'
 
 export type Attributes = {
   title: string
@@ -26,7 +26,10 @@ export type BlogkitConfig = {
     author?: string
     url?: string
   }
-  theme: TODO
+  theme: {
+    Head: React.Component<NextPageContext>
+    Post: React.Component<NextPageContext>
+  }
   request: Request
 }
 
