@@ -23,7 +23,9 @@ export class NotionToMarkdown extends _NotinoToMarkdown {
       if (annotations.strikethrough) text = tag('s', text)
       if (annotations.underline) text = tag('u', text)
 
-      text = color(text, annotations.color)
+      if (annotations.color !== 'default') {
+        text = color(text, annotations.color)
+      }
     }
 
     return leading_space + text + trailing_space
@@ -31,7 +33,7 @@ export class NotionToMarkdown extends _NotinoToMarkdown {
 }
 
 function color(text: string, color: Annotations['color']) {
-  return tag('span', text, `class="${color !== 'default' ? color : ''}"`)
+  return tag('span', text, `class="${color}"`)
 }
 
 function tag(t: string, content: string | null, attributes?: string) {
