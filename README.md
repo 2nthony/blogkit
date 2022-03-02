@@ -18,40 +18,34 @@ Blogkit is an unified blog engine inspired by [Sairin](https://github.com/djyde/
 | ---------------------------------------------------------------------------------------------------- | ------------- |
 | [blogkit-theme-minimal](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-theme-minimal) | Minimal theme |
 
+## Configuration
+
+`blogkit.config.ts`
+
+```ts
+// with ts intellisense
+import { defineConfig } from 'blogkit'
+
+export default defineConfig({
+  siteConfig: {
+    title: 'MyBlog', // required
+    author: '',
+    url: '',
+  },
+  theme: {},
+  request: {},
+})
+```
+
+More details see [types.ts](./packages/core/src/types.ts).
+
 ## Development
 
 ### Integrate with custom service
 
-Set the `request` to `blogkit.config.ts`:
+Set the `request` in `blogkit.config.ts`.
 
-```ts
-export default {
-  request: Request, // Types declaration read below
-}
-```
-
-```ts
-export type Attributes = {
-  title: string
-  slug: string
-  date: Date
-  description?: string
-}
-export type Post = {
-  id: string
-  html?: string
-  markdown?: string
-  attributes: Attributes
-}
-export type Posts = Omit<Post, 'body'>[]
-
-export type Request = {
-  getPostList(): Promise<Posts>
-  getPost(slug: string): Promise<Post>
-}
-```
-
-This is how [blogkit-notion](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-notion) did.
+This is how [blogkit-notion](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-notion) provided.
 
 ### Theme
 
