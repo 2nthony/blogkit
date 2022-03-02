@@ -10,13 +10,13 @@ importers:
 
   packages/blogkit-notion:
     specifiers:
-      '@notionhq/client': ^1.0.0
+      '@notionhq/client': ^1.0.1
       '@types/lodash': ^4.14.179
       lodash: ^4.17.21
       notion-to-md: ^2.3.1
       typescript: ^4.5.5
     dependencies:
-      '@notionhq/client': 1.0.0
+      '@notionhq/client': 1.0.1
       lodash: 4.17.21
       notion-to-md: 2.3.1
     devDependencies:
@@ -223,8 +223,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@notionhq/client/1.0.0:
-    resolution: {integrity: sha512-f0vs/zj+nwpuoFqhgZn9fHGpcUsaz6UIlzIyYhVuH1oCJG3RkfGEeYOZFEESMOsSz1oi5JkFKCOGkF+K69ystA==}
+  /@notionhq/client/1.0.1:
+    resolution: {integrity: sha512-RSavJQjZsqYyu4sd5PwBq39AHOqCTCzXZcS9dFwE0u1DEMjlYhvisYN3qgVtELZdNjSdTHsvC4mapB6vO8WCpQ==}
     engines: {node: '>=12'}
     dependencies:
       '@types/node-fetch': 2.6.1
