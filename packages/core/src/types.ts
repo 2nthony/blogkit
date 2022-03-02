@@ -13,16 +13,17 @@ export type Post = {
   markdown?: string
   attributes: Attributes
 }
-export type Posts = Omit<Post, 'body'>[]
+export type Posts = Omit<Post, 'html' | 'markdown'>[]
 
 export type Request = {
   getPostList(): Promise<Posts>
-  getPost(slug: string): Promise<Post>
+  getPost(slug: string): Promise<Omit<Post, 'html'>>
 }
 
 export type BlogkitConfig = {
   siteConfig: {
     title: string
+    author?: string
     url?: string
   }
   theme: TODO
