@@ -21,8 +21,5 @@
     "@notionhq/client": "^1.0.0",
     "lodash": "^4.17.21",
     "notion-to-md": "^2.3.1"
-  },
-  "peerDependencies": {
-    "blogkit": "*"
   }
 }
