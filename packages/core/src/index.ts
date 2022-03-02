@@ -1,6 +1,8 @@
 import { marked } from 'marked'
 import prism from 'prismjs'
+import { Feed } from 'feed'
 import type { BlogkitConfig } from './types'
+import { NextApiHandler } from 'next'
 
 export function defineConfig(config: BlogkitConfig) {
   return config
@@ -70,6 +72,53 @@ export class Blogkit {
       },
       revalidate: this.REVALIDATE,
     }
+  }
+
+  generateFeed = async () => {
+    const { title, author, url } = this.config.siteConfig
+
+    const feed = new Feed({
+      title,
+      copyright: title,
+      id: title,
+      author: {
+        name: author,
+      },
+    })
+
+    if (url) {
+      const postList = await this.getPostList()
+      const getPosts = postList.map((p) => this.getPost(p.attributes.slug))
+      const results = await Promise.allSettled(getPosts)
+
+      results.forEach((result) => {
+        if (result.status === 'fulfilled') {
+          const post = result.value
+          const link = `${url}/${post.attributes.slug}`
+
+          feed.addItem({
+            id: link,
+            date: new Date(post.attributes.date),
+            link,
+            description: post.attributes.description,
+            title,
+            content: this.parseMarkdown(post.markdown || ''),
+          })
+        }
+      })
+    }
+
+    return feed.atom1()
+  }
+
+  rssHandler: NextApiHandler = async (_req, res) => {
+    res.setHeader('Content-Type', 'application/xml')
+    // https://vercel.com/docs/concepts/edge-network/caching#stale-while-revalidate
+    res.setHeader(
+      'Cache-Control',
+      `s-maxage=1 stale-while-revalidate=${10 * 60}`,
+    )
+    res.send(await this.generateFeed())
   }
 }
 
