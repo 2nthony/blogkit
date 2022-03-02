@@ -27,7 +27,7 @@ export type BlogkitConfig = {
     url?: string
   }
   theme: {
-    Head: React.Component<NextPageContext>
+    Home: React.Component<NextPageContext>
     Post: React.Component<NextPageContext>
   }
   request: Request
