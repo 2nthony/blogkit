@@ -1,4 +1,6 @@
-import { NextPageContext } from 'next'
+import { ReactElement } from 'react'
+
+type TODO = any
 
 export type Attributes = {
   title: string
@@ -27,8 +29,8 @@ export type BlogkitConfig = {
     url?: string
   }
   theme: {
-    Home: React.Component<NextPageContext>
-    Post: React.Component<NextPageContext>
+    Home: TODO
+    Post: TODO
   }
   request: Request
 }
