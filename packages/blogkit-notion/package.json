@@ -23,6 +23,6 @@
     "notion-to-md": "^2.3.1"
   },
   "peerDependencies": {
-    "blogkit": "workspace:^"
+    "blogkit": "*"
   }
 }
