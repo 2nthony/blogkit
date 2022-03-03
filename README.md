@@ -11,6 +11,7 @@ Blogkit is an unified blog engine inspired by [Sairin](https://github.com/djyde/
 | Template                                                                    | One-Click Deploy                                                                                                                                                                                |
 | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [blogkit-notion-starter](https://github.com/2nthony/blogkit-notion-starter) | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F2nthony%2Fblogkit-notion-starter&env=NOTION_TOKEN,NOTION_DATABASE_ID) |
+| [blogkit-yuque-starter](https://github.com/2nthony/blogkit-yuque-starter)   | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F2nthony%2Fblogkit-yuque-starter&env=YUQUE_TOKEN,YUQUE_NAMESPACE)      |
 
 ## Themes
 
