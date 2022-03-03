@@ -3,6 +3,7 @@ import type { PostPageProps } from 'blogkit'
 import { Footer } from './Footer'
 import { Container } from './Container'
 import Head from 'next/head'
+import { date } from '../date'
 
 export function Post({ post, siteConfig }: PostPageProps) {
   if (!post) {
@@ -26,7 +27,7 @@ export function Post({ post, siteConfig }: PostPageProps) {
       <h1 className="text-4xl font-extrabold mb-4">{post.attributes.title}</h1>
 
       <div>
-        <time className="text-slate-400">{post.attributes.date}</time>
+        <time className="text-slate-400">{date(post.attributes.date)}</time>
       </div>
 
       <article
