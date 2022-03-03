@@ -1,5 +1,3 @@
-import { ReactElement } from 'react'
-
 type TODO = any
 
 export type Attributes = {
@@ -20,6 +18,7 @@ export type Posts = Omit<Post, 'html' | 'markdown'>[]
 export type Request = {
   getPostList(): Promise<Posts>
   getPost(slug: string): Promise<Omit<Post, 'html'>>
+  getFeed?(siteConfig: BlogkitConfig['siteConfig']): Promise<string>
 }
 
 export type BlogkitConfig = {
