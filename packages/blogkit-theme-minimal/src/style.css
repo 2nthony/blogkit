@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.post-body > *:first-child {
+  @apply mt-12;
+}
+
 .post-body h1,
 .post-body h2,
 .post-body h3,
