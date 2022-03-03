@@ -3,6 +3,7 @@ import { Container } from './Container'
 import { Footer } from './Footer'
 import Link from 'next/link'
 import Head from 'next/head'
+import { date } from '../date'
 
 export function Home({ posts, siteConfig }: HomePageProps) {
   return (
@@ -42,7 +43,9 @@ function PostItem({ post }: { post: Post }) {
       {post.attributes.description && (
         <p className="text-slate-500 mb-2">{post.attributes.description}</p>
       )}
-      <time className="text-slate-400 text-sm">{post.attributes.date}</time>
+      <time className="text-slate-400 text-sm">
+        {date(post.attributes.date)}
+      </time>
     </li>
   )
 }
