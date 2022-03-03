@@ -19,7 +19,11 @@
   },
   "dependencies": {
     "@notionhq/client": "^1.0.1",
+    "feed": "^4.2.2",
     "lodash": "^4.17.21",
     "notion-to-md": "^2.3.1"
+  },
+  "peerDependencies": {
+    "blogkit": "*"
   }
 }
