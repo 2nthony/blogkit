@@ -101,8 +101,8 @@ export class Blogkit {
       return
     }
 
-    res.setHeader('Content-Type', 'application/plain')
-    res.send('RSS not provided.')
+    res.setHeader('Content-Type', 'text/plain')
+    res.send('RSS is not provided.')
   }
 }
 
