@@ -52,6 +52,16 @@ This is how [blogkit-notion](https://github.com/2nthony/blogkit/tree/main/packag
 
 TODO, if you still, you could see the source code of [blogkit-theme-minimal](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-theme-minimal).
 
+## Q
+
+### Should I need to redeploy the Vercel project after my post updated?
+
+No.
+
+### How long will my post content update?
+
+Every 1 minute.
+
 ## License
 
 MIT © [2nthony](https://github.com/2nthony)
