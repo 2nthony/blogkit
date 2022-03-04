@@ -2,6 +2,7 @@ import { marked } from 'marked'
 import prism from 'prismjs'
 import type { BlogkitConfig } from './types'
 import { NextApiHandler } from 'next'
+import { Feed } from 'feed'
 
 export function defineConfig(config: BlogkitConfig) {
   return config
@@ -20,8 +21,8 @@ export class Blogkit {
     return this.config.request.getPost
   }
 
-  private get getFeed() {
-    return this.config.request.getFeed
+  private get getFeeds() {
+    return this.config.request.getFeeds
   }
 
   getStaticPaths = async () => {
@@ -64,19 +65,44 @@ export class Blogkit {
   }
 
   rssHandler: NextApiHandler = async (_req, res) => {
-    if (this.getFeed) {
+    if (this.getFeeds) {
+      const { title, author, url } = this.config.siteConfig
+      const feeds = await this.getFeeds()
+
+      const feed = new Feed({
+        title,
+        copyright: title,
+        id: title,
+        author: {
+          name: author,
+        },
+      })
+
+      if (url) {
+        feeds.forEach((item) => {
+          feed.addItem({
+            title: item.title,
+            link: `${url}/${item.slug}`,
+            content: parseMarkdown(item.markdown || ''),
+            date: item.date,
+            description: item.description,
+          })
+        })
+      }
+
       res.setHeader('Content-Type', 'application/xml')
       // https://vercel.com/docs/concepts/edge-network/caching#stale-while-revalidate
       res.setHeader(
         'Cache-Control',
         `s-maxage=1 stale-while-revalidate=${10 * 60}`,
       )
-      res.send(await this.getFeed(this.config.siteConfig))
+      res.send(feed.atom1())
+
       return
     }
 
-    res.setHeader('Content-Type', 'application/text')
-    res.send('rss not provided.')
+    res.setHeader('Content-Type', 'application/plain')
+    res.send('RSS not provided.')
   }
 }
 
