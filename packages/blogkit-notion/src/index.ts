@@ -1,9 +1,7 @@
-import { Request } from 'blogkit'
+import { Feed, Request } from 'blogkit'
 import { Client } from '@notionhq/client'
 import { retriever } from './retriever'
 import { NotionToMarkdown } from './notion-to-md'
-import { Feed } from 'feed'
-import { parseMarkdown } from 'blogkit'
 
 const notionToken = process.env.NOTION_TOKEN as string | undefined
 const notionDatabaseId = process.env.NOTION_DATABASE_ID as string | undefined
@@ -90,40 +88,26 @@ export const request: Request = {
     }
   },
 
-  async getFeed(siteConfig) {
-    const { author, title, url } = siteConfig
+  async getFeeds() {
+    const postList = await this.getPostList()
+    const getPosts = postList.map((p) => this.getPost(p.attributes.slug))
+    const results = await Promise.allSettled(getPosts)
 
-    const feed = new Feed({
-      title,
-      copyright: title,
-      id: title,
-      author: {
-        name: author,
-      },
-    })
+    const feeds: Feed[] = []
 
-    if (url) {
-      const postList = await this.getPostList()
-      const getPosts = postList.map((p) => this.getPost(p.attributes.slug))
-      const results = await Promise.allSettled(getPosts)
-
-      results.forEach((result) => {
-        if (result.status === 'fulfilled') {
-          const post = result.value
-          const link = `${url}/${post.attributes.slug}`
-
-          feed.addItem({
-            id: link,
-            date: new Date(post.attributes.date),
-            link,
-            description: post.attributes.description,
-            title,
-            content: parseMarkdown(post.markdown || ''),
-          })
-        }
-      })
+    for (const result of results) {
+      if (result.status === 'fulfilled') {
+        const post = result.value
+        feeds.push({
+          date: new Date(post.attributes.date),
+          slug: post.attributes.slug,
+          description: post.attributes.description,
+          title: post.attributes.title,
+          markdown: post.markdown,
+        })
+      }
     }
 
-    return feed.atom1()
+    return feeds
   },
 }

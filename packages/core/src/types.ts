@@ -13,12 +13,19 @@ export type Post = {
   markdown?: string
   attributes: Attributes
 }
-export type Posts = Omit<Post, 'html' | 'markdown'>[]
+export type Feed = {
+  slug: string
+  markdown?: string
+  title: string
+  date: Date
+  description?: string
+}
+export type Posts = Pick<Post, 'id' | 'attributes'>[]
 
 export type Request = {
   getPostList(): Promise<Posts>
   getPost(slug: string): Promise<Omit<Post, 'html'>>
-  getFeed?(siteConfig: BlogkitConfig['siteConfig']): Promise<string>
+  getFeeds?(): Promise<Feed[]>
 }
 
 export type BlogkitConfig = {

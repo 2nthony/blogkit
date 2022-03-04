@@ -23,6 +23,7 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
+    "feed": "^4.2.2",
     "marked": "^4.0.12",
     "prismjs": "^1.27.0"
   },
