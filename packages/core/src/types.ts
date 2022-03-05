@@ -42,15 +42,13 @@ export type BlogkitConfig = {
   request: Request
 }
 
+export type PageProps = {
+  siteConfig: BlogkitConfig['siteConfig']
+  themeConfig: BlogkitConfig['themeConfig']
+}
 export type HomePageProps = {
   posts: Posts
-  // @deprecated use config.siteConfig
-  siteConfig: BlogkitConfig['siteConfig']
-  config: BlogkitConfig
-}
+} & PageProps
 export type PostPageProps = {
   post: Post
-  // @deprecated use config.siteConfig
-  siteConfig: BlogkitConfig['siteConfig']
-  config: BlogkitConfig
-}
+} & PageProps

@@ -5,7 +5,7 @@ import { Container } from './Container'
 import Head from 'next/head'
 import { date } from '../date'
 
-export function Post({ post, config }: PostPageProps) {
+export function Post({ post, siteConfig }: PostPageProps) {
   if (!post) {
     return null
   }
@@ -14,13 +14,13 @@ export function Post({ post, config }: PostPageProps) {
     <Container>
       <Head>
         <title>
-          {post.attributes.title} - {config.siteConfig.title}
+          {post.attributes.title} - {siteConfig.title}
         </title>
       </Head>
 
       <div className="text-lg my-8 font-semibold">
         <Link href="/">
-          <a className="no-underline">{config.siteConfig.title}</a>
+          <a className="no-underline">{siteConfig.title}</a>
         </Link>
       </div>
 

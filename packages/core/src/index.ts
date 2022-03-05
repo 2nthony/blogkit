@@ -24,7 +24,6 @@ export class Blogkit {
   private get getFeeds() {
     return this.config.request.getFeeds
   }
-
   getStaticPaths = async () => {
     const posts = await this.getPostList()
 
@@ -41,7 +40,7 @@ export class Blogkit {
       props: {
         posts,
         siteConfig: this.config.siteConfig,
-        config: this.config,
+        themeConfig: this.config.themeConfig ?? {},
       },
       revalidate: this.REVALIDATE,
     }
@@ -60,7 +59,7 @@ export class Blogkit {
           attributes,
         },
         siteConfig: this.config.siteConfig,
-        config: this.config,
+        themeConfig: this.config.themeConfig ?? {},
       },
       revalidate: this.REVALIDATE,
     }
