@@ -14,15 +14,17 @@ export function Home({ posts, siteConfig, themeConfig }: HomePageProps) {
 
       <h1 className="text-4xl font-extrabold">{siteConfig.title}</h1>
 
-      <div className="flex gap-2">
-        {themeConfig?.links?.map((link: any) => {
-          return (
-            <Link href={link.url} key={link.url}>
-              <a target="_blank">{link.name}</a>
-            </Link>
-          )
-        })}
-      </div>
+      {themeConfig?.links && (
+        <div className="flex gap-2">
+          {themeConfig?.links?.map((link: any) => {
+            return (
+              <Link href={link.url} key={link.url}>
+                <a target="_blank">{link.name}</a>
+              </Link>
+            )
+          })}
+        </div>
+      )}
 
       <div className="mt-12 mb-12">
         <ul className="pl-0">
