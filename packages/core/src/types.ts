@@ -38,14 +38,19 @@ export type BlogkitConfig = {
     Home: TODO
     Post: TODO
   }
+  themeConfig?: Record<string, any>
   request: Request
 }
 
 export type HomePageProps = {
   posts: Posts
+  // @deprecated use config.siteConfig
   siteConfig: BlogkitConfig['siteConfig']
+  config: BlogkitConfig
 }
 export type PostPageProps = {
   post: Post
+  // @deprecated use config.siteConfig
   siteConfig: BlogkitConfig['siteConfig']
+  config: BlogkitConfig
 }
