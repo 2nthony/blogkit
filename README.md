@@ -54,11 +54,11 @@ TODO, if you still, you could see the source code of [blogkit-theme-minimal](htt
 
 ## Q
 
-### Should I need to redeploy the Vercel project after my post updated?
+### Should I redeploy the Vercel project after my post updated?
 
 No.
 
-### How long will my post content update?
+### How long will my post update?
 
 Every 1 minute.
 
