@@ -1,12 +1,16 @@
 {
-  "name": "empty-starter",
+  "name": "blogkit monorepo",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build"
+  },
   "license": "MIT",
   "devDependencies": {
     "@2nthony/prettier-config": "^1.0.0",
     "turbo": "^1.1.5"
-  }
+  },
+  "packageManager": "pnpm@6.32.2"
 }
