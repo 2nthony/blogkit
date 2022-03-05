@@ -5,14 +5,14 @@ import Link from 'next/link'
 import Head from 'next/head'
 import { date } from '../date'
 
-export function Home({ posts, siteConfig }: HomePageProps) {
+export function Home({ posts, config }: HomePageProps) {
   return (
     <Container>
       <Head>
-        <title>{siteConfig.title}</title>
+        <title>{config.siteConfig.title}</title>
       </Head>
 
-      <h1 className="text-4xl font-extrabold">{siteConfig.title}</h1>
+      <h1 className="text-4xl font-extrabold">{config.siteConfig.title}</h1>
 
       <div className="mt-16 mb-12">
         <ul className="pl-0">
