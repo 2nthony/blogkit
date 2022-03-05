@@ -40,7 +40,8 @@ export class Blogkit {
     return {
       props: {
         posts,
-        siteConfig: this.config?.siteConfig || {},
+        siteConfig: this.config.siteConfig,
+        config: this.config,
       },
       revalidate: this.REVALIDATE,
     }
@@ -58,7 +59,8 @@ export class Blogkit {
           html: parsed,
           attributes,
         },
-        siteConfig: this.config?.siteConfig || {},
+        siteConfig: this.config.siteConfig,
+        config: this.config,
       },
       revalidate: this.REVALIDATE,
     }
