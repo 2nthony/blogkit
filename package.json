@@ -6,11 +6,13 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
-    "publish": "lerna publish"
+    "version": "changeset version",
+    "publish": "changeset publish"
   },
   "license": "MIT",
   "devDependencies": {
     "@2nthony/prettier-config": "^1.0.0",
+    "@changesets/cli": "^2.21.0",
     "turbo": "^1.1.5"
   },
   "packageManager": "pnpm@6.32.2"
