@@ -1,0 +1,7 @@
+{
+  "npmClient": "pnpm",
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent"
+}
