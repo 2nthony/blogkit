@@ -6,6 +6,7 @@
   "scripts": {},
   "license": "MIT",
   "devDependencies": {
-    "@2nthony/prettier-config": "^1.0.0"
+    "@2nthony/prettier-config": "^1.0.0",
+    "turbo": "^1.1.5"
   }
 }
