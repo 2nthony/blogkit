@@ -38,9 +38,11 @@ export default defineConfig({
 })
 ```
 
-More details see [types.ts](./packages/core/src/types.ts).
+Details to see [types.ts](./packages/core/src/types.ts), but more recommend to see [blogkit-example](https://github.com/2nthony/blogkit-example).
 
 ## Development
+
+For full example see [blogkit-example](https://github.com/2nthony/blogkit-example).
 
 ### Integrate with custom service
 
