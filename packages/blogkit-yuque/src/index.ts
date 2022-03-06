@@ -21,7 +21,7 @@ export const request: Request = {
       const id = p.id
       const title = p.title as string
       const description = '' // too long
-      const date = p.published_at as Date
+      const date = p.published_at
       const slug = p.slug as string
 
       return {
@@ -46,7 +46,7 @@ export const request: Request = {
     const markdown = p.body
     const title = p.title as string
     const description = '' // too long
-    const date = p.published_at as Date
+    const date = p.published_at
 
     return {
       id,

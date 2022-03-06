@@ -56,7 +56,7 @@ export const request: Request = {
       const properties = (p as any).properties
       const title = retriever(properties.title) as string
       const description = retriever(properties.description) as string
-      const date = retriever(properties.date) as Date
+      const date = retriever(properties.date)
       const slug = retriever(properties.slug) as string
 
       return {
