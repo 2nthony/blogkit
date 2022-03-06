@@ -7,7 +7,8 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "version": "changeset version",
-    "publish": "changeset publish"
+    "publish": "changeset publish",
+    "push": "git push && git push --follow-tags"
   },
   "license": "MIT",
   "devDependencies": {
