@@ -15,6 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.179",
+    "blogkit": "workspace:^",
     "typescript": "^4.5.5"
   },
   "dependencies": {
@@ -23,6 +24,6 @@
     "notion-to-md": "^2.3.1"
   },
   "peerDependencies": {
-    "blogkit": "*"
+    "blogkit": "workspace:^"
   }
 }
