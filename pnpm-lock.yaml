@@ -16,15 +16,28 @@ importers:
     specifiers:
       '@notionhq/client': ^1.0.1
       '@types/lodash': ^4.14.179
+      blogkit: workspace:^0.3.3
       lodash: ^4.17.21
       notion-to-md: ^2.3.1
       typescript: ^4.5.5
     dependencies:
       '@notionhq/client': 1.0.1
+      blogkit: link:../core
       lodash: 4.17.21
       notion-to-md: 2.3.1
     devDependencies:
       '@types/lodash': 4.14.179
+      typescript: 4.5.5
+
+  packages/blogkit-strapi:
+    specifiers:
+      axios: ^0.26.0
+      blogkit: workspace:^0.3.3
+      typescript: ^4.5.5
+    dependencies:
+      axios: 0.26.0
+      blogkit: link:../core
+    devDependencies:
       typescript: 4.5.5
 
   packages/blogkit-theme-minimal:
@@ -59,9 +72,11 @@ importers:
   packages/blogkit-yuque:
     specifiers:
       axios: ^0.26.0
+      blogkit: workspace:^0.3.3
       typescript: ^4.5.5
     dependencies:
       axios: 0.26.0
+      blogkit: link:../core
     devDependencies:
       typescript: 4.5.5
 
