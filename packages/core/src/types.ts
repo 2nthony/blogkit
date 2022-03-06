@@ -3,7 +3,7 @@ type TODO = any
 export type Attributes = {
   title: string
   slug: string
-  date: Date
+  date: string
   description?: string
 }
 
