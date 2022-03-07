@@ -13,7 +13,7 @@ export class Blogkit {
 
   constructor(public userConfig: BlogkitConfig) {}
 
-  config = (() => {
+  private get config() {
     const { userConfig } = this
 
     // TODO: refactor this if have next similar feature
@@ -26,7 +26,7 @@ export class Blogkit {
       ...userConfig,
       request: resolvedRequest,
     }
-  })()
+  }
 
   private get getPostList() {
     return this.config.request.getPostList
