@@ -15,7 +15,7 @@
   "author": "2nthony",
   "license": "MIT",
   "devDependencies": {
-    "blogkit": "workspace:*",
+    "blogkit": "workspace:^",
     "typescript": "^4.5.5"
   },
   "dependencies": {
