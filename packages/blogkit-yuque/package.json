@@ -11,6 +11,7 @@
   "files": [
     "lib"
   ],
+  "funding": "https://github.com/sponsors/2nthony",
   "author": "2nthony",
   "license": "MIT",
   "devDependencies": {
