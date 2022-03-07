@@ -11,7 +11,22 @@ export function defineConfig(config: BlogkitConfig) {
 export class Blogkit {
   private REVALIDATE = 60
 
-  constructor(public config: BlogkitConfig) {}
+  constructor(public userConfig: BlogkitConfig) {}
+
+  config = (() => {
+    const { userConfig } = this
+
+    // TODO: refactor this if have next similar feature
+    const resolvedRequest =
+      typeof userConfig.request === 'function'
+        ? userConfig.request(userConfig)
+        : userConfig.request
+
+    return {
+      ...userConfig,
+      request: resolvedRequest,
+    }
+  })()
 
   private get getPostList() {
     return this.config.request.getPostList
@@ -24,6 +39,7 @@ export class Blogkit {
   private get getFeeds() {
     return this.config.request.getFeeds
   }
+
   getStaticPaths = async () => {
     const posts = await this.getPostList()
 
