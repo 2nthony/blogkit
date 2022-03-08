@@ -1,13 +1,10 @@
-export interface StrapiPostList {
+export interface StrapiPostList{
   data: {
     id: number
-    attributes: {
-      title: string
+    attributes: { [key: string]: string } & {
       createdAt: string
       updatedAt: string
       publishedAt: string
-      content: string
-      excerpt: string
     }
   }[],
   meta: {
@@ -20,16 +17,13 @@ export interface StrapiPostList {
   }
 }
 
-export interface StrapiPost {
+export interface StrapiPost{
   data: {
     id: number
-    attributes: {
-      title: string
+    attributes: { [key: string]: string } & {
       createdAt: string
       updatedAt: string
       publishedAt: string
-      content: string
-      excerpt: string
     }
   },
   meta: {}

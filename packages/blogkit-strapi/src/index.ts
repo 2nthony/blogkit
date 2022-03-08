@@ -12,37 +12,57 @@ const axios = Axios.create({
   baseURL: STRAPI_URL + '/api',
 })
 
-export const request: Request = {
-  async getPostList(): Promise<Posts> {
-    const { data } = await axios.get<StrapiPostList>(`/${CONTENT_TYPE}`)
+interface Config {
+  attributes?: {
+    title: string
+    content: string
+    excerpt: string
+  }
+}
 
-    const posts = data.data.map<Pick<Post, 'id' | 'attributes'>>((item) => ({
-      id: String(item.id),
-      attributes: {
-        title: item.attributes.title,
-        date: item.attributes.publishedAt,
-        description: item.attributes.excerpt,
-        slug: String(item.id),
-      },
-    }))
+type AttributeConfig = Config['attributes']
 
-    return posts
-  },
+const defaultAttributes: AttributeConfig = {
+  title: 'title',
+  content: 'content',
+  excerpt: 'excerpt',
+}
 
-  async getPost(slug: string): Promise<Omit<Post, 'html'>> {
-    const {
-      data: { data },
-    } = await axios.get<StrapiPost>(`/${CONTENT_TYPE}/${slug}`)
+export const request: (config?: Config) => Request = (config = {}) => {
+  const { attributes: attributeConfig = defaultAttributes } = config
 
-    return {
-      id: String(data.id),
-      markdown: data.attributes.content,
-      attributes: {
-        title: data.attributes.title,
-        description: data.attributes.excerpt,
-        date: data.attributes.publishedAt,
-        slug: String(data.id),
-      },
-    }
-  },
+  return {
+    async getPostList(): Promise<Posts> {
+      const { data } = await axios.get<StrapiPostList>(`/${CONTENT_TYPE}`)
+
+      const posts = data.data.map<Pick<Post, 'id' | 'attributes'>>((item) => ({
+        id: String(item.id),
+        attributes: {
+          title: item.attributes[attributeConfig.title],
+          date: item.attributes.publishedAt,
+          description: item.attributes[attributeConfig.excerpt],
+          slug: String(item.id),
+        },
+      }))
+
+      return posts
+    },
+
+    async getPost(slug: string): Promise<Omit<Post, 'html'>> {
+      const {
+        data: { data },
+      } = await axios.get<StrapiPost>(`/${CONTENT_TYPE}/${slug}`)
+
+      return {
+        id: String(data.id),
+        markdown: data.attributes[attributeConfig.content],
+        attributes: {
+          title: data.attributes[attributeConfig.title],
+          description: data.attributes[attributeConfig.excerpt],
+          date: data.attributes.publishedAt,
+          slug: String(data.id),
+        },
+      }
+    },
+  }
 }
