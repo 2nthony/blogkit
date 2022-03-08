@@ -5,18 +5,18 @@ importers:
   .:
     specifiers:
       '@2nthony/prettier-config': ^1.0.0
-      '@changesets/cli': ^2.21.0
+      '@changesets/cli': ^2.21.1
       turbo: ^1.1.5
     devDependencies:
       '@2nthony/prettier-config': 1.0.0
-      '@changesets/cli': 2.21.0
+      '@changesets/cli': 2.21.1
       turbo: 1.1.5
 
   packages/blogkit-notion:
     specifiers:
       '@notionhq/client': ^1.0.1
       '@types/lodash': ^4.14.179
-      blogkit: workspace:^0.3.3
+      blogkit: workspace:^
       lodash: ^4.17.21
       notion-to-md: ^2.3.1
       typescript: ^4.5.5
@@ -27,6 +27,7 @@ importers:
       notion-to-md: 2.3.1
     devDependencies:
       '@types/lodash': 4.14.179
+      blogkit: link:../core
       typescript: 4.5.5
 
   packages/blogkit-strapi:
@@ -45,7 +46,7 @@ importers:
       '@tailwindcss/typography': ^0.5.2
       '@types/react': ^17.0.39
       autoprefixer: ^10.4.2
-      blogkit: ^0.3.3
+      blogkit: workspace:^
       concurrently: ^7.0.0
       dayjs: ^1.10.8
       next: ^12.1.0
@@ -72,12 +73,13 @@ importers:
   packages/blogkit-yuque:
     specifiers:
       axios: ^0.26.0
-      blogkit: workspace:^0.3.3
+      blogkit: workspace:^
       typescript: ^4.5.5
     dependencies:
       axios: 0.26.0
       blogkit: link:../core
     devDependencies:
+      blogkit: link:../core
       typescript: 4.5.5
 
   packages/core:
@@ -155,8 +157,8 @@ packages:
       semver: 5.7.1
     dev: true
 
-  /@changesets/assemble-release-plan/5.1.0:
-    resolution: {integrity: sha512-iYlqffCMhcwZ+6Cv8cimf10OBGYXQKufBI7J6htpRgCV2nT99RKXEjbYOtrXWKQqzu0XxOsk15apSEwjZN0JRw==}
+  /@changesets/assemble-release-plan/5.1.1:
+    resolution: {integrity: sha512-TQRZnK1sqYuoibJdSwpqE81rfDh0Xrkkr/M6bCQZ1ogGoRJNVbNYDWvNfkNvR4rEdRylri8cfKzffo/ruoy8QA==}
     dependencies:
       '@babel/runtime': 7.17.2
       '@changesets/errors': 0.1.4
@@ -172,18 +174,18 @@ packages:
       '@changesets/types': 4.1.0
     dev: true
 
-  /@changesets/cli/2.21.0:
-    resolution: {integrity: sha512-cJXRg28MmF9VbQrlwSjpY4AJA2xZUbXFCpQ3kFmX0IeppO7wknZ2QfocAhIqwM828t8d3R4Zpi5xnvJ/crIcQw==}
+  /@changesets/cli/2.21.1:
+    resolution: {integrity: sha512-4AJKo/UW0P217m2VHjiuhZy+CstLw54eu9I1fsY7tst76GeEN7mX0mVrTNEisR6CvOH7wLav3ITqvDcKVPbKsw==}
     hasBin: true
     dependencies:
       '@babel/runtime': 7.17.2
       '@changesets/apply-release-plan': 5.0.5
-      '@changesets/assemble-release-plan': 5.1.0
+      '@changesets/assemble-release-plan': 5.1.1
       '@changesets/changelog-git': 0.1.10
       '@changesets/config': 1.7.0
       '@changesets/errors': 0.1.4
       '@changesets/get-dependents-graph': 1.3.1
-      '@changesets/get-release-plan': 3.0.6
+      '@changesets/get-release-plan': 3.0.7
       '@changesets/git': 1.3.1
       '@changesets/logger': 0.0.5
       '@changesets/pre': 1.0.10
@@ -237,11 +239,11 @@ packages:
       semver: 5.7.1
     dev: true
 
-  /@changesets/get-release-plan/3.0.6:
-    resolution: {integrity: sha512-HpPyr8y6xkihy3rONLZ6OtfgYq88NotidPAuS3nwMeZjLHiIVLyejR2+/5q717f6HKcrATxAjTwMAcjl7X/uzA==}
+  /@changesets/get-release-plan/3.0.7:
+    resolution: {integrity: sha512-zDp6RIEKvERIF4Osy8sJ5BzqTiiLMhPWBO02y6w3nzTQJ0VBMaTs4hhwImQ/54O9I34eUHR3D0DwmwGQ27ifaw==}
     dependencies:
       '@babel/runtime': 7.17.2
-      '@changesets/assemble-release-plan': 5.1.0
+      '@changesets/assemble-release-plan': 5.1.1
       '@changesets/config': 1.7.0
       '@changesets/pre': 1.0.10
       '@changesets/read': 0.5.4

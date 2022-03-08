@@ -1,6 +1,6 @@
 {
   "name": "blogkit-notion",
-  "version": "0.4.2",
+  "version": "0.4.4",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -11,10 +11,12 @@
   "files": [
     "lib"
   ],
+  "funding": "https://github.com/sponsors/2nthony",
   "author": "2nthony",
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.179",
+    "blogkit": "workspace:^",
     "typescript": "^4.5.5"
   },
   "dependencies": {
@@ -23,6 +25,6 @@
     "notion-to-md": "^2.3.1"
   },
   "peerDependencies": {
-    "blogkit": "*"
+    "blogkit": "workspace:^"
   }
 }

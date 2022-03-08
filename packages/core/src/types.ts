@@ -39,7 +39,7 @@ export type BlogkitConfig = {
     Post: TODO
   }
   themeConfig?: Record<string, any>
-  request: Request
+  request: Request | ((config: BlogkitConfig) => Request)
 }
 
 export type PageProps = {
