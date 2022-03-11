@@ -13,7 +13,7 @@ export class Blogkit {
 
   constructor(public userConfig: BlogkitConfig) {}
 
-  private get config() {
+  get config() {
     const { userConfig } = this
 
     // TODO: refactor this if have next similar feature
