@@ -1,5 +1,11 @@
 # blogkit
 
+## 0.4.1
+
+### Patch Changes
+
+- fix core config
+
 ## 0.4.0
 
 ### Minor Changes

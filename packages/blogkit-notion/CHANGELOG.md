@@ -1,5 +1,12 @@
 # blogkit-notion
 
+## 0.4.5
+
+### Patch Changes
+
+- Updated dependencies
+  - blogkit@0.4.1
+
 ## 0.4.4
 
 ### Patch Changes
