@@ -1,0 +1,25 @@
+{
+  "name": "blogkit-strapi",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "lib"
+  ],
+  "author": "colmugx",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
+  },
+  "peerDependencies": {
+    "blogkit": "*"
+  }
+}
