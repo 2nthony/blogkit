@@ -1,5 +1,11 @@
 # blogkit-theme-minimal
 
+## 0.3.5
+
+### Patch Changes
+
+- fix tailwind
+
 ## 0.3.4
 
 ### Patch Changes
