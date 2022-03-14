@@ -28,5 +28,18 @@ module.exports = {
       rose: colors.rose,
     },
   },
+  theme: {
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              backgroundColor: theme('colors.gray[50]'),
+            },
+          },
+        },
+      }),
+    },
+  },
   plugins: [require('@tailwindcss/typography')],
 }
