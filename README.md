@@ -4,14 +4,15 @@
 
 Blogkit is a unified blog engine inspired by [Sairin](https://github.com/djyde/sairin).
 
-![](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/aZpKgJmeSC4X.png)
+![Notion Example](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/aZpKgJmeSC4X.png)
 
 ## Get started with starter templates
 
-| Template                                                                    | One-Click Deploy                                                                                                                                                                                |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [blogkit-notion-starter](https://github.com/2nthony/blogkit-notion-starter) | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F2nthony%2Fblogkit-notion-starter&env=NOTION_TOKEN,NOTION_DATABASE_ID) |
-| [blogkit-yuque-starter](https://github.com/2nthony/blogkit-yuque-starter)   | [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2F2nthony%2Fblogkit-yuque-starter&env=YUQUE_TOKEN,YUQUE_NAMESPACE)      |
+| Template                                                                    | Description     |
+| --------------------------------------------------------------------------- | --------------- |
+| [blogkit-notion-starter](https://github.com/2nthony/blogkit-notion-starter) | Notion database |
+| [blogkit-yuque-starter](https://github.com/2nthony/blogkit-yuque-starter)   | Yuque repo      |
+| [blogkit-strapi-starter](https://github.com/2nthony/blogkit-strapi-starter) | Strapi CMS      |
 
 ## Themes
 
@@ -21,7 +22,7 @@ Blogkit is a unified blog engine inspired by [Sairin](https://github.com/djyde/s
 
 ## Configuration
 
-`blogkit.config.ts`
+`blogkit.config.js`
 
 ```ts
 // with ts intellisense
