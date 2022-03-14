@@ -1,5 +1,11 @@
 # blogkit-theme-minimal
 
+## 0.3.4
+
+### Patch Changes
+
+- use one light color
+
 ## 0.3.3
 
 ### Patch Changes
