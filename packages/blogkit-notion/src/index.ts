@@ -2,6 +2,7 @@ import { Feed, Request } from 'blogkit'
 import { Client } from '@notionhq/client'
 import { retriever } from './retriever'
 import { NotionToMarkdown } from './notion-to-md'
+import { parseMentionPageToInSitePage } from './helpers/parseMentionPageToInSitePage'
 
 const notionToken = process.env.NOTION_TOKEN as string | undefined
 const notionDatabaseId = process.env.NOTION_DATABASE_ID as string | undefined
@@ -79,7 +80,11 @@ export const request: Request = {
     const id = post!.id
 
     const blocks = await n2m.pageToMarkdown(id)
-    const markdown = n2m.toMarkdownString(blocks)
+    const parsedBlocks = blocks.map((block) => {
+      block = parseMentionPageToInSitePage({ posts, block })
+      return block
+    })
+    const markdown = n2m.toMarkdownString(parsedBlocks)
 
     return {
       id,
