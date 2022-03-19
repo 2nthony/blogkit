@@ -1,5 +1,11 @@
 # blogkit-notion
 
+## 0.5.0
+
+### Minor Changes
+
+- parse notion link to in-site link
+
 ## 0.4.5
 
 ### Patch Changes
