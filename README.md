@@ -6,17 +6,27 @@ Blogkit is a unified blog engine inspired by [Sairin](https://github.com/djyde/s
 
 ![Notion Example](https://cdn.jsdelivr.net/gh/2nthony/statics@main/uPic/aZpKgJmeSC4X.png)
 
-## Get started with starter templates
+## Ecosystems
 
-| Template                                                                    | Description     |
-| --------------------------------------------------------------------------- | --------------- |
-| [blogkit-notion-starter](https://github.com/2nthony/blogkit-notion-starter) | Notion database |
-| [blogkit-yuque-starter](https://github.com/2nthony/blogkit-yuque-starter)   | Yuque repo      |
-| [blogkit-strapi-starter](https://github.com/2nthony/blogkit-strapi-starter) | Strapi CMS      |
+### Requests
 
-## Themes
+| Name                                                                                   | Version                                                                                                    | Description                        |
+| -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| [blogkit-notion](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-notion) | [![](https://badgen.net/npm/v/blogkit-notion?label=&color=cyan)](https://npmjs.com/package/blogkit-notin)  | Request preset for Notion database |
+| [blogkit-yuque](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-yuque)   | [![](https://badgen.net/npm/v/blogkit-yuque?label=&color=cyan)](https://npmjs.com/package/blogkit-yuque)   | Request preset for Yuque repo      |
+| [blogkit-strapi](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-strapi) | [![](https://badgen.net/npm/v/blogkit-strapi?label=&color=cyan)](https://npmjs.com/package/blogkit-strapi) | Request preset for Strapi CMS      |
 
-| Theme                                                                                                | Description   |
+### Templates
+
+| Name                                                                        | Description                      |
+| --------------------------------------------------------------------------- | -------------------------------- |
+| [blogkit-notion-starter](https://github.com/2nthony/blogkit-notion-starter) | Notion request and minimal theme |
+| [blogkit-yuque-starter](https://github.com/2nthony/blogkit-yuque-starter)   | Yuque request and minimal theme  |
+| [blogkit-strapi-starter](https://github.com/2nthony/blogkit-strapi-starter) | Strapi CMS and minimal theme     |
+
+### Themes
+
+| Name                                                                                                 | Description   |
 | ---------------------------------------------------------------------------------------------------- | ------------- |
 | [blogkit-theme-minimal](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-theme-minimal) | Minimal theme |
 
@@ -47,7 +57,7 @@ For full example see [blogkit-example](https://github.com/2nthony/blogkit-exampl
 
 ### Integrate with custom service
 
-Set the `request` in `blogkit.config.ts`.
+Set the `request` in `blogkit.config.js`.
 
 This is how [blogkit-notion](https://github.com/2nthony/blogkit/tree/main/packages/blogkit-notion) provided.
 
