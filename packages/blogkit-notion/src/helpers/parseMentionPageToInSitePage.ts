@@ -17,7 +17,8 @@ export function parseMentionPageToInSitePage({
       const id = matched!.groups!.id
       const post = posts.find((post) => {
         // strip `-`
-        return post.id.replaceAll('-', '') === id
+        // Vercel current in Nodejs 14
+        return post.id.replace(/-/g, '') === id
       })
 
       if (post) {
