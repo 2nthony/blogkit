@@ -55,10 +55,11 @@ export const request: Request = {
     const posts = data.map((p) => {
       const id = p.id
       const properties = (p as any).properties
-      const title = retriever(properties.title) as string
-      const description = retriever(properties.description) as string
+      const title = retriever(properties.title)
       const date = retriever(properties.date)
-      const slug = retriever(properties.slug) as string
+      const slug = retriever(properties.slug)
+      /* optional */
+      const description = retriever(properties.description) || null
 
       return {
         id,
