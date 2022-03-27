@@ -26,6 +26,11 @@ export function Home({ posts, siteConfig, themeConfig }: HomePageProps) {
         </div>
       )}
 
+      <article
+        className="post-body"
+        dangerouslySetInnerHTML={{ __html: themeConfig?.introduceHTML }}
+      ></article>
+
       <div className="mt-12 mb-12">
         <ul className="pl-0">
           {posts.map((post) => {
