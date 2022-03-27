@@ -1,5 +1,11 @@
 # blogkit-theme-minimal
 
+## 0.3.7
+
+### Patch Changes
+
+- themeConfig.introduceHTML
+
 ## 0.3.6
 
 ### Patch Changes
