@@ -1,5 +1,11 @@
 # blogkit-notion
 
+## 0.5.3
+
+### Patch Changes
+
+- support simple table
+
 ## 0.5.2
 
 ### Patch Changes
