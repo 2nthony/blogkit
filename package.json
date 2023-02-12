@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
+    "changeset": "changeset",
     "version": "changeset version",
     "publish": "changeset publish",
     "push": "git push && git push --follow-tags"
