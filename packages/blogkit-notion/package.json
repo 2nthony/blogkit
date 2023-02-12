@@ -15,14 +15,14 @@
   "author": "2nthony",
   "license": "MIT",
   "devDependencies": {
-    "@types/lodash": "^4.14.179",
+    "@types/lodash": "^4.14.191",
     "blogkit": "workspace:^",
-    "typescript": "^4.5.5"
+    "typescript": "^4.9.5"
   },
   "dependencies": {
-    "@notionhq/client": "^1.0.1",
+    "@notionhq/client": "^1.0.4",
     "lodash": "^4.17.21",
-    "notion-to-md": "^2.3.1"
+    "notion-to-md": "^2.5.5"
   },
   "peerDependencies": {
     "blogkit": "workspace:^"
