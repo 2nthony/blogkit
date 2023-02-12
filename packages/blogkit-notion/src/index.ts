@@ -9,7 +9,7 @@ const notionDatabaseId = process.env.NOTION_DATABASE_ID as string | undefined
 
 const notion = new Client({
   auth: notionToken,
-  notionVersion: '2021-08-16',
+  notionVersion: '2022-06-28',
 })
 const n2m = new NotionToMarkdown({ notionClient: notion })
 
