@@ -32,10 +32,12 @@ importers:
   packages/blogkit-strapi:
     specifiers:
       axios: ^0.26.0
+      blogkit: workspace:^
       typescript: ^4.5.5
     dependencies:
       axios: 0.26.0
     devDependencies:
+      blogkit: link:../core
       typescript: 4.5.5
 
   packages/blogkit-theme-minimal:
@@ -64,7 +66,7 @@ importers:
       postcss: 8.4.7
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      tailwindcss: 3.0.23_iwc7stpd5lcuyf56paxiwujvfq
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
       typescript: 4.5.5
 
   packages/blogkit-yuque:
@@ -481,7 +483,7 @@ packages:
       lodash.castarray: 4.4.0
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
-      tailwindcss: 3.0.23_iwc7stpd5lcuyf56paxiwujvfq
+      tailwindcss: 3.0.23_autoprefixer@10.4.2
     dev: true
 
   /@types/is-ci/3.0.0:
@@ -2413,13 +2415,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /tailwindcss/3.0.23_iwc7stpd5lcuyf56paxiwujvfq:
+  /tailwindcss/3.0.23_autoprefixer@10.4.2:
     resolution: {integrity: sha512-+OZOV9ubyQ6oI2BXEhzw4HrqvgcARY38xv3zKcjnWtMIZstEsXdI9xftd1iB7+RbOnj2HOEzkA0OyB5BaSxPQA==}
     engines: {node: '>=12.13.0'}
     hasBin: true
     peerDependencies:
       autoprefixer: ^10.0.2
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.1
       autoprefixer: 10.4.2_postcss@8.4.7
