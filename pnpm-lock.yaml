@@ -17,8 +17,8 @@ importers:
   packages/blogkit-notion:
     dependencies:
       '@notionhq/client':
-        specifier: ^1.0.4
-        version: 1.0.4
+        specifier: ^2.0.0
+        version: 2.0.0
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -495,8 +495,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@notionhq/client@1.0.4:
-    resolution: {integrity: sha512-m7zZ5l3RUktayf1lRBV1XMb8HSKsmWTv/LZPqP7UGC1NMzOlc+bbTOPNQ4CP/c1P4cP61VWLb/zBq7a3c0nMaw==}
+  /@notionhq/client@2.0.0:
+    resolution: {integrity: sha512-S3pNOoeKxdpog3jSTzFtJ7OivB/ubxn1MK9a5T7/eYtsdulyL0eqAt/btY0S9QEPCKVNKjnZbYMdV+E4x8eItA==}
     engines: {node: '>=12'}
     dependencies:
       '@types/node-fetch': 2.6.2
