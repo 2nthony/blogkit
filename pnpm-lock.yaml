@@ -108,8 +108,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2
       marked:
-        specifier: ^4.0.12
-        version: 4.0.12
+        specifier: ^5.0.0
+        version: 5.0.0
       prismjs:
         specifier: ^1.27.0
         version: 1.27.0
@@ -1695,9 +1695,9 @@ packages:
       repeat-string: 1.6.1
     dev: false
 
-  /marked@4.0.12:
-    resolution: {integrity: sha512-hgibXWrEDNBWgGiK18j/4lkS6ihTe9sxtV4Q1OQppb/0zzyPSzoFANBa5MfsG/zgsWklmNnhm0XACZOH/0HBiQ==}
-    engines: {node: '>= 12'}
+  /marked@5.0.0:
+    resolution: {integrity: sha512-YQ6+L9l/NSBDjFgCQQebmTCc62EUdZ5RpIZ7A/FmC8IYMB5s7Cz8sT7imuMAkbIL4CvXpQLdW45fpK5UwiU7DA==}
+    engines: {node: '>= 18'}
     hasBin: true
     dev: false
 
