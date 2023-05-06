@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.191",
     "blogkit": "workspace:^",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "@notionhq/client": "^1.0.4",

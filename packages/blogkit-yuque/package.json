@@ -16,7 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "blogkit": "workspace:^",
-    "typescript": "^4.5.5"
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "axios": "^0.26.0"
