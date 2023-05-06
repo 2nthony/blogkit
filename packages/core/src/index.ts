@@ -4,7 +4,14 @@ import type { BlogkitConfig } from './types'
 import { NextApiHandler } from 'next'
 import { Feed } from 'feed'
 
+/**
+ * @deprecated use `defineBlogkitConfig` instead
+ */
 export function defineConfig(config: BlogkitConfig) {
+  return config
+}
+
+export function defineBlogkitConfig(config: BlogkitConfig) {
   return config
 }
 

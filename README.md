@@ -36,9 +36,9 @@ Blogkit is a unified blog engine inspired by [Sairin](https://github.com/djyde/s
 
 ```ts
 // with ts intellisense
-import { defineConfig } from 'blogkit'
+import { defineBlogkitConfig } from 'blogkit'
 
-export default defineConfig({
+export default defineBlogkitConfig({
   siteConfig: {
     title: 'MyBlog', // required
     author: '',
