@@ -19,7 +19,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "axios": "^0.26.0"
+    "axios": "^1.0.0"
   },
   "peerDependencies": {
     "blogkit": "workspace:^"
