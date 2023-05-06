@@ -124,8 +124,8 @@ importers:
         version: 1.27.0
     devDependencies:
       '@types/marked':
-        specifier: ^4.0.2
-        version: 4.0.2
+        specifier: ^4.3.0
+        version: 4.3.0
       '@types/prismjs':
         specifier: ^1.26.0
         version: 1.26.0
@@ -731,8 +731,8 @@ packages:
     resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
     dev: true
 
-  /@types/marked@4.0.2:
-    resolution: {integrity: sha512-auNrZ/c0w6wsM9DccwVxWHssrMDezHUAXNesdp2RQrCVCyrQbOiSq7yqdJKrUQQpw9VTm7CGYJH2A/YG7jjrjQ==}
+  /@types/marked@4.3.0:
+    resolution: {integrity: sha512-zK4gSFMjgslsv5Lyvr3O1yCjgmnE4pr8jbG8qVn4QglMwtpvPCf4YT2Wma7Nk95OxUUJI8Z+kzdXohbM7mVpGw==}
     dev: true
 
   /@types/mdast@3.0.11:
