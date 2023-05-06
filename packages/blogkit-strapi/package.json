@@ -14,6 +14,7 @@
   "author": "colmugx",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.1.0",
     "blogkit": "workspace:^",
     "typescript": "^5.0.0"
   },

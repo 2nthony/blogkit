@@ -16,6 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.191",
+    "@types/node": "^20.1.0",
     "blogkit": "workspace:^",
     "typescript": "^5.0.0"
   },
