@@ -18,7 +18,7 @@
     "blogkit": "workspace:^"
   },
   "dependencies": {
-    "@notionhq/client": "^1.0.4",
+    "@notionhq/client": "^2.0.0",
     "lodash": "^4.17.21",
     "notion-to-md": "^2.5.5"
   },
