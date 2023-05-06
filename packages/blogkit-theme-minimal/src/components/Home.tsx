@@ -1,9 +1,9 @@
 import type { HomePageProps, Post } from 'blogkit'
-import { Container } from './Container'
-import { Footer } from './Footer'
 import Link from 'next/link'
 import Head from 'next/head'
 import { date } from '../date'
+import { Footer } from './Footer'
+import { Container } from './Container'
 
 export function Home({ posts, siteConfig, themeConfig }: HomePageProps) {
   return (
@@ -50,7 +50,7 @@ function PostItem({ post }: { post: Post }) {
   return (
     <li className="post-item my-6 list-none pl-0">
       <h3 className="text-2xl font-bold mb-2">
-        <Link href={'/' + post.attributes.slug}>
+        <Link href={`/${post.attributes.slug}`}>
           <a className="hover:underline no-underline cursor-pointer">
             {post.attributes.title}
           </a>

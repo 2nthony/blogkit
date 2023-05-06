@@ -2,26 +2,26 @@
   "name": "blogkit-strapi",
   "version": "0.1.0",
   "description": "",
+  "author": "colmugx",
+  "license": "MIT",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "files": [
-    "lib"
-  ],
-  "author": "colmugx",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/node": "^20.1.0",
-    "blogkit": "workspace:^",
-    "typescript": "^5.0.0"
+  "peerDependencies": {
+    "blogkit": "workspace:^"
   },
   "dependencies": {
     "axios": "^0.26.0"
   },
-  "peerDependencies": {
-    "blogkit": "workspace:^"
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "blogkit": "workspace:^",
+    "typescript": "^5.0.0"
   }
 }

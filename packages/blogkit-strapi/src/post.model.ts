@@ -1,4 +1,4 @@
-export interface StrapiPostList{
+export interface StrapiPostList {
   data: {
     id: number
     attributes: { [key: string]: string } & {
@@ -6,7 +6,7 @@ export interface StrapiPostList{
       updatedAt: string
       publishedAt: string
     }
-  }[],
+  }[]
   meta: {
     pagination: {
       page: number
@@ -17,7 +17,7 @@ export interface StrapiPostList{
   }
 }
 
-export interface StrapiPost{
+export interface StrapiPost {
   data: {
     id: number
     attributes: { [key: string]: string } & {
@@ -25,6 +25,6 @@ export interface StrapiPost{
       updatedAt: string
       publishedAt: string
     }
-  },
+  }
   meta: {}
 }

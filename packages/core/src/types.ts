@@ -1,19 +1,19 @@
 type TODO = any
 
-export type Attributes = {
+export interface Attributes {
   title: string
   slug: string
   date: string
   description?: string
 }
 
-export type Post = {
+export interface Post {
   id: string
   html?: string
   markdown?: string
   attributes: Attributes
 }
-export type Feed = {
+export interface Feed {
   slug: string
   markdown?: string
   title: string
@@ -22,13 +22,13 @@ export type Feed = {
 }
 export type Posts = Pick<Post, 'id' | 'attributes'>[]
 
-export type Request = {
+export interface Request {
   getPostList(): Promise<Posts>
   getPost(slug: string): Promise<Omit<Post, 'html'>>
   getFeeds?(): Promise<Feed[]>
 }
 
-export type BlogkitConfig = {
+export interface BlogkitConfig {
   siteConfig: {
     title: string
     author?: string
@@ -42,7 +42,7 @@ export type BlogkitConfig = {
   request: Request | ((config: BlogkitConfig) => Request)
 }
 
-export type PageProps = {
+export interface PageProps {
   siteConfig: BlogkitConfig['siteConfig']
   themeConfig: BlogkitConfig['themeConfig']
 }

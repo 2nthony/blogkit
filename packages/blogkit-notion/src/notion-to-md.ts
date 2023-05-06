@@ -1,7 +1,7 @@
 // override NotionToMarkdown
 
 import { NotionToMarkdown as _NotinoToMarkdown } from 'notion-to-md'
-import { Annotations } from 'notion-to-md/build/types'
+import type { Annotations } from 'notion-to-md/build/types'
 
 export class NotionToMarkdown extends _NotinoToMarkdown {
   annotatePlainText(text: string, annotations: Annotations): string {
@@ -23,9 +23,8 @@ export class NotionToMarkdown extends _NotinoToMarkdown {
       if (annotations.strikethrough) text = tag('s', text)
       if (annotations.underline) text = tag('u', text)
 
-      if (annotations.color !== 'default') {
+      if (annotations.color !== 'default')
         text = color(text, annotations.color)
-      }
     }
 
     return leading_space + text + trailing_space

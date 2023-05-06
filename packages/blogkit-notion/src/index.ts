@@ -1,4 +1,4 @@
-import { Feed, Request } from 'blogkit'
+import type { Feed, Request } from 'blogkit'
 import { Client } from '@notionhq/client'
 import { retriever } from './retriever'
 import { NotionToMarkdown } from './notion-to-md'
@@ -77,7 +77,7 @@ export const request: Request = {
 
   async getPost(slug: string) {
     const posts = await this.getPostList()
-    const post = posts.find((p) => p.attributes.slug === slug)
+    const post = posts.find(p => p.attributes.slug === slug)
     const id = post!.id
 
     const blocks = await n2m.pageToMarkdown(id)
@@ -96,7 +96,7 @@ export const request: Request = {
 
   async getFeeds() {
     const postList = await this.getPostList()
-    const getPosts = postList.map((p) => this.getPost(p.attributes.slug))
+    const getPosts = postList.map(p => this.getPost(p.attributes.slug))
     const results = await Promise.allSettled(getPosts)
 
     const feeds: Feed[] = []

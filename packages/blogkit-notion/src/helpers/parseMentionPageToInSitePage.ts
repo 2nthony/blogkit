@@ -23,7 +23,7 @@ export function parseMentionPageToInSitePage({
 
       if (post) {
         // post slug
-        block.parent = block.parent.replace(url, '/' + post.attributes.slug)
+        block.parent = block.parent.replace(url, `/${post.attributes.slug}`)
       }
     }
   }

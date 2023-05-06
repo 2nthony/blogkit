@@ -1,6 +1,6 @@
 import Axios from 'axios'
-import { Post, Posts, Request } from 'blogkit'
-import { StrapiPost, StrapiPostList } from './post.model'
+import type { Post, Posts, Request } from 'blogkit'
+import type { StrapiPost, StrapiPostList } from './post.model'
 
 const STRAPI_URL = process.env.STRAPI_API_URL || 'http://localhost:1337'
 const CONTENT_TYPE = process.env.STRAPI_CONTENT_TYPE || 'articles'
@@ -9,7 +9,7 @@ const axios = Axios.create({
   headers: {
     'Content-Type': 'application/json',
   },
-  baseURL: STRAPI_URL + '/api',
+  baseURL: `${STRAPI_URL}/api`,
 })
 
 interface Config {
@@ -35,7 +35,7 @@ export const request: (config?: Config) => Request = (config = {}) => {
     async getPostList(): Promise<Posts> {
       const { data } = await axios.get<StrapiPostList>(`/${CONTENT_TYPE}`)
 
-      const posts = data.data.map<Pick<Post, 'id' | 'attributes'>>((item) => ({
+      const posts = data.data.map<Pick<Post, 'id' | 'attributes'>>(item => ({
         id: String(item.id),
         attributes: {
           title: item.attributes[attributeConfig.title],

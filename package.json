@@ -9,7 +9,9 @@
     "changeset": "changeset",
     "version": "changeset version",
     "publish": "changeset publish",
-    "push": "git push && git push --follow-tags"
+    "push": "git push && git push --follow-tags",
+    "lint": "eslint packages",
+    "lint-fix": "npm run lint -- --fix"
   },
   "license": "MIT",
   "devDependencies": {

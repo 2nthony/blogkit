@@ -2,19 +2,27 @@
   "name": "blogkit",
   "version": "0.4.1",
   "description": "",
+  "author": "2nthony",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/2nthony",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "files": [
-    "lib"
-  ],
-  "funding": "https://github.com/sponsors/2nthony",
-  "author": "2nthony",
-  "license": "MIT",
+  "peerDependencies": {
+    "next": "^12.1.0"
+  },
+  "dependencies": {
+    "feed": "^4.2.2",
+    "marked": "^4.0.12",
+    "prismjs": "^1.27.0"
+  },
   "devDependencies": {
     "@types/marked": "^4.0.2",
     "@types/prismjs": "^1.26.0",
@@ -22,13 +30,5 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "feed": "^4.2.2",
-    "marked": "^4.0.12",
-    "prismjs": "^1.27.0"
-  },
-  "peerDependencies": {
-    "next": "^12.1.0"
   }
 }

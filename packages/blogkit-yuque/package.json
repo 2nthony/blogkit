@@ -2,26 +2,26 @@
   "name": "blogkit-yuque",
   "version": "0.1.4",
   "description": "",
+  "author": "2nthony",
+  "license": "MIT",
+  "funding": "https://github.com/sponsors/2nthony",
   "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "files": [
-    "lib"
-  ],
-  "funding": "https://github.com/sponsors/2nthony",
-  "author": "2nthony",
-  "license": "MIT",
-  "devDependencies": {
-    "blogkit": "workspace:^",
-    "typescript": "^5.0.0"
+  "peerDependencies": {
+    "blogkit": "workspace:^"
   },
   "dependencies": {
     "axios": "^0.26.0"
   },
-  "peerDependencies": {
-    "blogkit": "workspace:^"
+  "devDependencies": {
+    "blogkit": "workspace:^",
+    "typescript": "^5.0.0"
   }
 }

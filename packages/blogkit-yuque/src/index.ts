@@ -1,4 +1,4 @@
-import { Request } from 'blogkit'
+import type { Request } from 'blogkit'
 import Axios from 'axios'
 
 const yuqueNamespace = process.env.YUQUE_NAMESPACE as string | undefined

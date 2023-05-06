@@ -1,6 +1,7 @@
 // Modified from shuding/nextra
 
 const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: ['./src/**/*.{ts,css,tsx}'],
   theme: {
@@ -27,10 +28,8 @@ module.exports = {
       pink: colors.pink,
       rose: colors.rose,
     },
-  },
-  theme: {
     extend: {
-      typography: (theme) => ({
+      typography: theme => ({
         DEFAULT: {
           css: {
             pre: {

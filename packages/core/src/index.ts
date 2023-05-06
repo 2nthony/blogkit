@@ -1,8 +1,8 @@
 import { marked } from 'marked'
 import prism from 'prismjs'
-import type { BlogkitConfig } from './types'
-import { NextApiHandler } from 'next'
+import type { NextApiHandler } from 'next'
 import { Feed } from 'feed'
+import type { BlogkitConfig } from './types'
 
 /**
  * @deprecated use `defineBlogkitConfig` instead
@@ -24,8 +24,8 @@ export class Blogkit {
     const { userConfig } = this
 
     // TODO: refactor this if have next similar feature
-    const resolvedRequest =
-      typeof userConfig.request === 'function'
+    const resolvedRequest
+      = typeof userConfig.request === 'function'
         ? userConfig.request(userConfig)
         : userConfig.request
 
@@ -51,7 +51,7 @@ export class Blogkit {
     const posts = await this.getPostList()
 
     return {
-      paths: posts.map((p) => `/${p.attributes.slug || ''}`),
+      paths: posts.map(p => `/${p.attributes.slug || ''}`),
       fallback: true,
     }
   }
@@ -133,11 +133,11 @@ export class Blogkit {
 export function parseMarkdown(body: string) {
   const parsed = marked.parse(body, {
     highlight(code, lang) {
-      if (prism.languages[lang]) {
+      if (prism.languages[lang])
         return prism.highlight(code, prism.languages[lang], lang)
-      } else {
+
+      else
         return code
-      }
     },
   })
 

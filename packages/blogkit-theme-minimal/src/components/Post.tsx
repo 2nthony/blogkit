@@ -1,14 +1,13 @@
 import Link from 'next/link'
 import type { PostPageProps } from 'blogkit'
-import { Footer } from './Footer'
-import { Container } from './Container'
 import Head from 'next/head'
 import { date } from '../date'
+import { Footer } from './Footer'
+import { Container } from './Container'
 
 export function Post({ post, siteConfig }: PostPageProps) {
-  if (!post) {
+  if (!post)
     return null
-  }
 
   return (
     <Container>
