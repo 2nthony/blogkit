@@ -20,7 +20,7 @@
   "dependencies": {
     "@notionhq/client": "^2.0.0",
     "lodash": "^4.17.21",
-    "notion-to-md": "^2.5.5"
+    "notion-to-md": "^3.0.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.191",
