@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@2nthony/eslint-config": "^1.0.3",
+    "@2nthony/eslint-config": "^2.0.0",
     "@changesets/cli": "^2.26.0",
     "eslint": "^8.40.0",
     "turbo": "^1.7.4"
